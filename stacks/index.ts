@@ -9,5 +9,6 @@ export default function (app: App) {
             format: 'esm',
         },
     })
+
     app.stack(MyStack)
 }

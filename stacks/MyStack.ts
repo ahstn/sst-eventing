@@ -1,7 +1,6 @@
 import { Api, StackContext, Topic } from '@serverless-stack/resources'
 
 export function MyStack({ stack }: StackContext) {
-    // Create Topic
     const topic = new Topic(stack, 'Ordered', {
         subscribers: {
             receipt: 'functions/receipt.main',
@@ -9,7 +8,6 @@ export function MyStack({ stack }: StackContext) {
         },
     })
 
-    // Create the HTTP API
     const api = new Api(stack, 'Api', {
         defaults: {
             function: {
@@ -17,6 +15,7 @@ export function MyStack({ stack }: StackContext) {
                 environment: {
                     topicArn: topic.topicArn,
                 },
+                permissions: [topic],
             },
         },
         routes: {
@@ -24,10 +23,6 @@ export function MyStack({ stack }: StackContext) {
         },
     })
 
-    // Allow the API to publish the topic
-    api.attachPermissions([topic])
-
-    // Show the API endpoint in the output
     stack.addOutputs({
         ApiEndpoint: api.url,
     })
