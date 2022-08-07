@@ -1,4 +1,4 @@
-# How to use Pub/Sub in your serverless app
+# SST Eventing
 
 An example serverless app created with SST.
 
@@ -6,40 +6,54 @@ An example serverless app created with SST.
 
 [**Read the tutorial**](https://sst.dev/examples/how-to-use-pub-sub-in-your-serverless-app.html)
 
-Install the example.
+```shell
+.
 
-```bash
-$ npx create-sst@latest --template=examples/pub-sub
-# Or with Yarn
-$ yarn create sst --template=examples/pub-sub
+├── python             # Example Publisher
+│   ├── app.py
+│   └── requirements.txt
+├── services           # Lambda Consumers
+│   ├── functions
+│   └── package.json
+├── sst.json
+└── stacks             # IaC for SNS & Consumers
+    ├── MyStack.ts
+    └── index.ts
 ```
 
 ## Commands
 
-### `npm run start`
+**TLDR:** `npm run start && open https://console.sst.dev`
 
-Starts the Live Lambda Development environment.
+```shell
+➜ npm run
+Lifecycle scripts included in sst-eventing@0.0.0:
+  start
+    sst start
+  test
+    vitest run
 
-### `npm run build`
-
-Build your app and synthesize your stacks.
-
-### `npm run deploy [stack]`
-
-Deploy all your stacks to AWS. Or optionally deploy, a specific stack.
-
-### `npm run remove [stack]`
-
-Remove all your stacks and all of their resources from AWS. Or optionally removes, a specific stack.
-
-### `npm run test`
-
-Runs your tests using Jest. Takes all the [Jest CLI options](https://jestjs.io/docs/en/cli).
+available via `npm run-script`:
+  build
+    sst build
+  deploy
+    sst deploy
+  remove
+    sst remove
+  console
+    sst console
+  typecheck
+    tsc --noEmit
+  test:lint
+    eslint stacks --ext .ts
+  test:prettier
+    prettier 'src/**/*.ts'
+```
 
 ## Documentation
 
 Learn more about the SST.
 
-- [Docs](https://docs.sst.dev/)
-- [@serverless-stack/cli](https://docs.sst.dev/packages/cli)
-- [@serverless-stack/resources](https://docs.sst.dev/packages/resources)
+-   [Docs](https://docs.sst.dev/)
+-   [@serverless-stack/cli](https://docs.sst.dev/packages/cli)
+-   [@serverless-stack/resources](https://docs.sst.dev/packages/resources)
