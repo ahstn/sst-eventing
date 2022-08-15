@@ -1,6 +1,13 @@
 # SST Eventing
 
-An example serverless app created with SST.
+An example serverless app created with [SST] used to demonstrate creating Lambdas and Topics with Lambda consumers.
+
+## 🚀 Features
+
+-   TypeScript 4.7 with [`esbuild`] via [SST].
+-   [ESLint] with [plugin/import] and [Prettier].
+-   Lambda integration with [Datadog Serverless Monitoring | DataDog Blog]
+-   Example Python topic publisher using [boto3].
 
 ## Getting Started
 
@@ -8,7 +15,6 @@ An example serverless app created with SST.
 
 ```shell
 .
-
 ├── python             # Example Publisher
 │   ├── app.py
 │   └── requirements.txt
@@ -57,3 +63,11 @@ Learn more about the SST.
 -   [Docs](https://docs.sst.dev/)
 -   [@serverless-stack/cli](https://docs.sst.dev/packages/cli)
 -   [@serverless-stack/resources](https://docs.sst.dev/packages/resources)
+
+[`esbuild`]: https://esbuild.github.io/
+[sst]: https://sst.dev
+[eslint]: https://eslint.org/
+[plugin/import]: https://github.com/import-js/eslint-plugin-import
+[prettier]: https://prettier.io/
+[datadog serverless monitoring | datadog blog]: https://www.datadoghq.com/blog/monitor-aws-fully-managed-services-datadog-serverless-monitoring/
+[boto3]: https://github.com/boto/boto3
