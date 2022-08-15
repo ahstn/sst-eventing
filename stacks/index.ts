@@ -1,4 +1,4 @@
-import { MyStack } from './MyStack'
+import { EventStack } from './event-stack'
 import { App } from '@serverless-stack/resources'
 
 export default function (app: App) {
@@ -10,5 +10,5 @@ export default function (app: App) {
         },
     })
 
-    app.stack(MyStack)
+    app.stack(EventStack)
 }

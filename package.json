@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:lint": "eslint stacks --ext .ts",
-    "test:prettier": "prettier 'src/**/*.ts'"
+    "test:prettier": "prettier 'src/**/*.ts'",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@serverless-stack/cli": "^1.6.7",
@@ -20,12 +21,14 @@
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
     "aws-cdk-lib": "2.32.0",
+    "datadog-cdk-constructs-v2": "^0.3.5",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
     "vitest": "^0.21.0"
